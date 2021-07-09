@@ -1,11 +1,283 @@
-<html>
-<head>
- <title>Example</title>
- <link rel="stylesheet" href="style.css">
- <script src="code.js"></script>
-</head>
-<body>
-<h1>Entities</h1>
-<button type="button" onclick="fillEntities()">See entities</button>
-<ul id="entities" />
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Nuestros Constituyentes - Proyecto MTI 2021</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">Acerca de</h4>
+          <p class="text-muted">Nuestro proyecto consiste en dar a conocer a la comunidad 
+              el trabajo realizado por los integrantes de la convención constitucional. 
+              Este portal obtiene información en línea desde WikiData, y permite registrar
+              nuevos datos.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Nuestro equipo</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Wilfredo Guerrero</a></li>
+            <li><a href="#" class="text-white">Jorge Vega</a></li>
+            <li><a href="#" class="text-white">Jacob Vega</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Constituyentes</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Integrantes de la convención</h1>
+        <p class="lead text-muted">A continuación se indican los integrantes de la convención 
+            constitucional, junto con un enlace a su perfil en Wkidata. Además encontrarás
+            un enlace que te permitirá agregar nuevos datos.
+        </p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Buscar integrante</a>
+          <a href="#" class="btn btn-secondary my-2">Envíanos tus comentarios</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img src="https://radio.uchile.cl/wp-content/uploads/2020/11/Elisa-Loncon-1.jpg" class="card-img-top" alt="Elisa Loncón">
+            <div class="card-body">
+              <h5>Elisa Loncón</h5>
+              <p class="card-text">Indigenous leader in Chile</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q106904381" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                  <!--<button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>-->
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://as01.epimg.net/chile/imagenes/2021/07/06/actualidad/1625529060_304525_1625529304_noticia_normal_recorte1.jpg" class="card-img-top" alt="Jaime Bassa">
+
+            <div class="card-body">
+                <h5>Jaime Bassa</h5>
+                <p class="card-text">chilean lawyer</p>
+                <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q106916647" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://www.epicentrochile.com/wp-content/uploads/2021/01/harboe.jpg" class="card-img-top" alt="Felipe Harboe">
+
+            <div class="card-body">
+                <h5>Felipe Harboe</h5>
+              <p class="card-text">Chilean politician</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q3068132" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="http://cronicanoticias.cl/wp-content/uploads/2021/01/B%C3%A1rbara-Rebolledo.jpg" class="card-img-top" alt="Bárbara Rebolledo">
+
+            <div class="card-body">
+                <h5>Bárbara Rebolledo</h5>
+              <p class="card-text">Chilean television presenter</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q4503837" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://estaticos-cdn.elperiodico.com/clip/6f7b6df9-e096-4bc6-93a0-72e86ea28efc_alta-libre-aspect-ratio_default_0.jpg" class="card-img-top" alt="Agustín Squella">
+
+            <div class="card-body">
+                <h5>Agustín Squella</h5>
+              <p class="card-text">No description defined</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q5660884" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://radio.uchile.cl/wp-content/uploads/2021/05/Benito-Baranda.jpg" class="card-img-top" alt="Benito Baranda">
+
+            <div class="card-body">
+                <h5>Benito Baranda</h5>
+              <p class="card-text">Chilean psychologist</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q5725800" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://www.labatalla.cl/wp-content/uploads/2021/03/bernardo-de-la-maza-1-1.jpg" class="card-img-top" alt="Bernardo de la Maza">
+
+            <div class="card-body">
+                <h5>Bernardo de la Maza</h5>
+              <p class="card-text">Chilean journalist</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q5726985" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://www.duna.cl/media/2018/11/221870_1_5ad88fde8b7c9.jpg" class="card-img-top" alt="Cristián Monckeberg">
+
+            <div class="card-body">
+                <h5>Cristián Monckeberg</h5>
+              <p class="card-text">Chilean lawyer</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q5791610" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://www.latercera.com/resizer/w6tjiuEWdXM2wi-d_N5j1v_Bssc=/arc-anglerfish-arc2-prod-copesa/public/TLSH5T22HBG27JSLS4A5UDX7BQ.jpg" class="card-img-top" alt="Fuad Chain">
+
+            <div class="card-body">
+                <h5>Fuad Chahín</h5>
+              <p class="card-text">Chilean politician</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="https://www.wikidata.org/wiki/Q5869979" target="_blank" class="btn btn-sm btn-outline-secondary">Ver</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Editar</a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Arriba</a>
+    </p>
+    <p class="mb-1">Proyecto creado como parte de la asignatura Sistemas y aplicaciones Web</p>
+    <p class="mb-0"><a href="http://www.usm.cl">UTFSM</a>&nbsp;-&nbsp;<a href="http://www.mti.cl" target="_blank">Magíster en Tecnologías de la Información</a>&nbsp;-&nbsp;<a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">WikiData</a>.</p>
+  </div>
+</footer>
+
+
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      
+  </body>
 </html>

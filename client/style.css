@@ -1,3 +1,16 @@
 h1 {
-  color: blue; 
+  color:slategrey; 
+}
+
+header{
+  text-align: center;
+}
+
+footer{
+  background-color: darkblue;
+  color: aliceblue;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
