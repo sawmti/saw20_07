@@ -39,11 +39,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/app', routes())
 
 // Log invocations
-app.use(function(req, res, next) 
+/*app.use(function(req, res, next) 
 { 
   console.log(req.url); 
   next(); 
-});
+});*/
 
 // Directly serve static content from /client
 app.use(express.static(root + '/client'));
