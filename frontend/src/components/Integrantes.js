@@ -1,0 +1,67 @@
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+
+const Integrantes = ({listaintegrantes}) => {
+    console.log(listaintegrantes);
+
+    if (listaintegrantes.length === 0) return null;
+
+    return (
+        <Fragment>
+            <section className="py-5 text-center container">
+                <div className="row py-lg-5">
+                    <div className="col-lg-6 col-md-8 mx-auto">
+                        <h1 className="fw-light">Integrantes de la convención</h1>
+
+                        <p className="lead text-muted">A continuación se indican los integrantes de la convención 
+                            constitucional, junto con un enlace a su perfil en Wkidata. Además encontrarás
+                            un enlace que te permitirá agregar nuevos datos.
+                        </p>
+                        <p>
+                            <Link to={'/buscar'} className="btn btn-primary my-2">Buscar integrante</Link>
+                            &nbsp;
+                            <Link to={'/comentarios'} className="btn btn-secondary my-2">Envíanos tus comentarios</Link>
+                            &nbsp;
+                            <Link to={'/agregar'} className="btn btn-success my-2">Agregar integrante</Link>
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+
+            <div className="album py-5 bg-light">
+                <div className="container">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                        {listaintegrantes.map(detintegrante => (
+
+                        <div key={detintegrante._id} className="col">
+                            <div className="card shadow-sm">
+                                <img src={detintegrante.urlimagen} className="img-fluid img-responsive" alt="{detintegrante.nombre}" />
+                                <div className="card-body">
+                                    <h5>{detintegrante.nombre}</h5>
+                                    <p className="card-text">{detintegrante.ocupacion}</p>
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <div className="btn-group">
+                                            <Link to={`/integrante/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Detalle</Link>
+                                            <Link to={`https://www.wikidata.org/wiki/${detintegrante.codexterno}`} target="_blank" className="btn btn-sm btn-outline-secondary" rel="noreferrer">Wikidata</Link>
+                                            <Link to={`/editar/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Editar</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        ))}
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </Fragment>
+    );
+}
+
+export default Integrantes;
