@@ -27,7 +27,7 @@ const IntegranteDetalle = (props) => {
       console.log(error)
     })
 
-    //console.log(detalle);
+    console.log(detalle);
 
     return( 
         <Fragment>
