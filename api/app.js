@@ -24,7 +24,7 @@ mongoose.Promise = global.Promise;
   useFindAndModify: false
 });*/
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.vyudj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://admin:admin@cluster0.vyudj.mongodb.net/constituyentes?retryWrites=true&w=majority',{
 //mongoose.connect('mongodb+srv://usrconvencion:1234@clusterconvencionapp.ggos6.mongodb.net/convencionapp?retryWrites=true&w=majority',{
   useNewUrlParser: true,
   useUnifiedTopology: true,
