@@ -44,6 +44,7 @@ exports.obtenerIntegrantes = async (req, res, next) => {
             console.log("lectura base de datos, integrantes: " + integrantes.length);
             integrantes.forEach((integrante) => {
                 results.push({
+                    _id: integrante._id,
                     entity: integrante.entity,
                     content: {
                         name: integrante.content.name,
