@@ -21,7 +21,9 @@ const wikiController = {
                         console.log(simplifiedP31Claims);
                         resolve(json);
                     }).catch(e => {
-                        reject("E");
+                        console.log("123123");
+                        console.log(e);
+                        reject("Exxxxxxx");
                     });
         });
     },
@@ -40,8 +42,9 @@ const wikiController = {
                     console.log(simplifiedClaims);
                     console.log(simplifiedP31Claims);
                     resolve(json);
-                }).catch(e => {
-                    reject("E");
+                }).catch((e) => {
+                    console.log(e);
+                    reject(e);
                 });
         });
     },
@@ -53,7 +56,8 @@ const wikiController = {
                 .then(json => {
                     resolve(json);
                 }).catch(e => {
-                    reject("E");
+                    console.log(e);
+                    reject(e);
                 });
         });
     }

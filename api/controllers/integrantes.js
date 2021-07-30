@@ -150,10 +150,6 @@ exports.obtenerIntegrantes = async (req, res, next) => {
 exports.obtenerIntegrante = async (req, res, next) => {
     try{
         const integrante = await Integrante.findById(req.params.id);
-        console.log(integrante);
-        wiki.getProperties(integrante.entity).then((a) => {
-            console.log(JSON.stringify(a, undefined, 2 ));
-        });
         res.json({
             status: "success",
             data: {
