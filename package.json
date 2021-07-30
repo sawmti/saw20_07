@@ -18,7 +18,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.13.2"
+    "mongoose": "^5.13.2",
+    "node-fetch": "^2.6.1",
+    "wikibase-sdk": "^7.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
