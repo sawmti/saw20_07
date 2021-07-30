@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import clienteAxios from '../config/axios';
 
 const IntegranteDetalle = (props) => {
 
@@ -9,14 +10,31 @@ const IntegranteDetalle = (props) => {
     }
 
     // extraer por props
-    const { integrante: { nombre, codexterno, ocupacion, urlimagen } } = props;
+    //const { integrante: { nombre, codexterno, ocupacion, urlimagen } } = props;
+
+    //console.log(props.integrante.data);
+    //console.log(props.integranteid);
+
+    let detalle;
+
+    clienteAxios.get('/integrantes/'+props.integranteid)
+    .then(respuesta => {
+        //console.log(respuesta.data.data.integrante)
+        detalle = respuesta.data.data.integrante;
+        console.log(detalle);
+    })
+    .catch(error => {
+      console.log(error)
+    })
+
+    //console.log(detalle);
 
     return( 
         <Fragment>
             <section className="py-4 text-center container">
                 <div className="row py-lg-5">
                     <div className="col-lg-6 col-md-8 mx-auto">
-                        <h1 className="fw-light">Integrante: {nombre}</h1>
+                        <h1 className="fw-light">Integrante: </h1>
 
                         <p className="lead text-muted">En esta sección se muestra el detalle
                         del integrante de la convención seleccionado.
@@ -32,31 +50,31 @@ const IntegranteDetalle = (props) => {
                 </div>
             </section>
 
-            <div class="container px-4 py-4" id="icon-grid">
-                <h2 class="pb-2 border-bottom">Detalle</h2>
+            <div className="container px-4 py-4" id="icon-grid">
+                <h2 className="pb-2 border-bottom">Detalle</h2>
 
-                <div class="row featurette">
-                    <div class="col-md-8">
+                <div className="row featurette">
+                    <div className="col-md-8">
 
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
-                            <div class="col d-flex align-items-start">
-                                <i class="fas fa-code iconoportal"></i>
+                        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+                            <div className="col d-flex align-items-start">
+                                <i className="fas fa-code iconoportal"></i>
                                 <div>
-                                <h4 class="fw-bold mb-0">Código WikiData</h4>
-                                <p>{codexterno}</p>
+                                <h4 className="fw-bold mb-0">Código WikiData</h4>
+                                <p>codexterno</p>
                                 </div>
                             </div>
-                            <div class="col d-flex align-items-start">
-                                <i class="fas fa-briefcase iconoportal"></i>
+                            <div className="col d-flex align-items-start">
+                                <i className="fas fa-briefcase iconoportal"></i>
                                 <div>
-                                <h4 class="fw-bold mb-0">Ocupación</h4>
-                                <p>{ocupacion}</p>
+                                <h4 className="fw-bold mb-0">Ocupación</h4>
+                                <p>ocupacion</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <img src={urlimagen} className="card-img-top" alt="{nombre}" />
+                    <div className="col-md-4">
+                        <img src="urlimagen" className="card-img-top" alt="nombre" />
                     </div>
                 </div>
 

@@ -2,9 +2,12 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const Integrantes = ({listaintegrantes}) => {
-    console.log(listaintegrantes);
+    //console.log(listaintegrantes);
+
 
     if (listaintegrantes.length === 0) return null;
+
+    let listado = listaintegrantes.data["integrantes"];
 
     return (
         <Fragment>
@@ -32,19 +35,19 @@ const Integrantes = ({listaintegrantes}) => {
             <div className="album py-5 bg-light">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                        {listaintegrantes.map(detintegrante => (
+                        
+                    {listado.map(detintegrante => (
 
                         <div key={detintegrante._id} className="col">
                             <div className="card shadow-sm">
-                                <img src={detintegrante.urlimagen} className="img-fluid img-responsive" alt="{detintegrante.nombre}" />
+                                <img src={detintegrante.content.image} className="img-fluid img-responsive" alt="{detintegrante.entity}" />
                                 <div className="card-body">
-                                    <h5>{detintegrante.nombre}</h5>
-                                    <p className="card-text">{detintegrante.ocupacion}</p>
+                                    <h5>{detintegrante.content.name}</h5>
+                                    <p className="card-text">{detintegrante.entity}</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
                                             <Link to={`/integrante/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Detalle</Link>
-                                            <Link to={`https://www.wikidata.org/wiki/${detintegrante.codexterno}`} target="_blank" className="btn btn-sm btn-outline-secondary" rel="noreferrer">Wikidata</Link>
+                                            <Link to={`https://www.wikidata.org/wiki/${detintegrante.entity}`} target="_blank" className="btn btn-sm btn-outline-secondary" rel="noreferrer">Wikidata</Link>
                                             <Link to={`/editar/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Editar</Link>
                                         </div>
                                     </div>
@@ -53,8 +56,6 @@ const Integrantes = ({listaintegrantes}) => {
                         </div>
 
                         ))}
-
-
 
                     </div>
                 </div>

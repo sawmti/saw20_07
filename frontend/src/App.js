@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import clienteAxios from './config/axios';
+ 
 
 //Componentes 
 import Integrantes from './components/Integrantes';
@@ -68,12 +68,13 @@ function App() {
           path="/integrante/:id"
           render={(props) => {
             //console.log(props.match.params.id);
-            const integrante = listaIntegrantes.filter(integrante => integrante._id === props.match.params.id)
+            //const integrante = listaIntegrantes.filter(integrante => integrante._id === props.match.params.id)
 
             //console.log(integrante);
 
             return (
-              <IntegranteDetalle integrante={integrante[0]} />
+              <IntegranteDetalle integrante={listaIntegrantes} 
+                integranteid={props.match.params.id} />
             )
           }}
         />

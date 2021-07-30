@@ -1,31 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/integrantes');
+const integranteController = require('../controllers/integranteController');
 
 module.exports = function() {
 
     router.get('/integrantes', 
-        controller.obtenerIntegrantes
+        integranteController.obtenerIntegrantes
     );
 
     // Agrega nuevos integrantes via POST
     router.post('/integrantes',
-        controller.nuevoIntegrante
+        integranteController.nuevoIntegrante
     );
 
     // Obtiene un integrante en específico (ID)
     router.get('/integrantes/:id',
-        controller.obtenerIntegrante 
+        integranteController.obtenerIntegrante 
     );
 
     // Actualizar un integrante con un ID especifico
     router.put('/integrantes/:id',
-        controller.actualizarIntegrante
+        integranteController.actualizarIntegrante
     );
 
     //Elimina un paciente por su ID
     router.delete('/integrantes/:id',
-        controller.eliminarIntegrante
+        integranteController.eliminarIntegrante
     );
 
     return router;
