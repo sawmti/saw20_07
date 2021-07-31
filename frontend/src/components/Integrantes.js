@@ -21,11 +21,9 @@ const Integrantes = ({listaintegrantes}) => {
                             un enlace que te permitirá agregar nuevos datos.
                         </p>
                         <p>
-                            <Link to={'/buscar'} className="btn btn-primary my-2">Buscar integrante</Link>
-                            &nbsp;
-                            <Link to={'/comentarios'} className="btn btn-secondary my-2">Envíanos tus comentarios</Link>
-                            &nbsp;
                             <Link to={'/agregar'} className="btn btn-success my-2">Agregar integrante</Link>
+                            &nbsp;
+                            <Link to={'/comentarios'} className="btn btn-primary my-2">Envíanos tus comentarios</Link>
                         </p>
 
                     </div>
@@ -34,7 +32,7 @@ const Integrantes = ({listaintegrantes}) => {
 
             <div className="album py-5 bg-light">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         
                     {listado.map(detintegrante => (
 
@@ -47,8 +45,8 @@ const Integrantes = ({listaintegrantes}) => {
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
                                             <Link to={`/integrante/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Detalle</Link>
-                                            <Link to={`https://www.wikidata.org/wiki/${detintegrante.entity}`} target="_blank" className="btn btn-sm btn-outline-secondary" rel="noreferrer">Wikidata</Link>
-                                            <Link to={`/editar/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Editar</Link>
+                                            <a href={`http://www.wikidata.org/wiki/${detintegrante.entity}`} target="_blank" className="btn btn-sm btn-outline-secondary" rel="noreferrer">Wikidata</a>
+                                            <Link to={`/crear/${detintegrante._id}`} className="btn btn-sm btn-outline-secondary">Editar</Link>
                                         </div>
                                     </div>
                                 </div>

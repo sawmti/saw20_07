@@ -23,11 +23,16 @@
   .iconoportal{
     width: 2em;
     height: 2em;
+    margin: 10px;
   }
 
   .img-integrante{
     width:auto;
     height:250px;
+  }
+
+  .estilologo{
+    max-width: 150px;
   }
 
   /*footer{

@@ -59,8 +59,21 @@ function App() {
 
         <Route
           exact 
-          path="/crear"
-          component={CrearAnotacion}
+          path="/crear/:id"
+          //component={CrearAnotacion}
+          render={(props) => {
+            //console.log(props.match.params.id);
+            //const integrante = listaIntegrantes.filter(integrante => integrante._id === props.match.params.id)
+
+            console.log(listaIntegrantes);
+            //console.log(integrante);
+
+            return (
+              <CrearAnotacion listaintegrantes={listaIntegrantes} 
+                integranteid={props.match.params.id} />
+            )
+          }}
+
         />
 
         <Route
