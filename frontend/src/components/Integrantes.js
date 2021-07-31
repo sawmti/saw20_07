@@ -20,12 +20,6 @@ const Integrantes = ({listaintegrantes}) => {
                             constitucional, junto con un enlace a su perfil en Wkidata. Además encontrarás
                             un enlace que te permitirá agregar nuevos datos.
                         </p>
-                        <p>
-                            <Link to={'/agregar'} className="btn btn-success my-2">Agregar integrante</Link>
-                            &nbsp;
-                            <Link to={'/comentarios'} className="btn btn-primary my-2">Envíanos tus comentarios</Link>
-                        </p>
-
                     </div>
                 </div>
             </section>

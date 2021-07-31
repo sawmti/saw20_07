@@ -138,11 +138,6 @@ class IntegranteDetalle extends React.Component {
                             <p className="lead text-muted">En esta sección se muestra el detalle
                             del integrante de la convención seleccionado.
                             </p>
-                            <p>
-                                <Link to={'/agregar'} className="btn btn-success my-2">Agregar integrante</Link>
-                                &nbsp;
-                                <Link to={'/comentarios'} className="btn btn-primary my-2">Envíanos tus comentarios</Link>
-                            </p>
                         </div>
                     </div>
                 </section>

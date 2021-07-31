@@ -8,7 +8,10 @@ class CrearAnotacion extends React.Component {
         this.state = {
             id: props.integranteid,
             detalle: {
-                content: {}
+                content: {
+                    birth: {},
+                    party: {}
+                }
             }
         };
     }
@@ -70,18 +73,22 @@ class CrearAnotacion extends React.Component {
 
         const actualizarLugarNacimiento = e => {
             console.log(e.target.value);
+            this.state.detalle.content.birth.place = e.target.value;
         }
 
         const actualizarFechaNacimiento = e => {
             console.log(e.target.value);
+            this.state.detalle.content.birth.date = e.target.value;
         }
 
         const actualizarNombrePartido = e => {
             console.log(e.target.value);
+            this.state.detalle.content.party.name = e.target.value;
         }
 
         const actualizarLogoPartido = e => {
             console.log(e.target.value);
+            this.state.detalle.content.party.logo = e.target.value;
         }
 
         // Enviar una petición a la API
@@ -122,7 +129,7 @@ class CrearAnotacion extends React.Component {
 
         console.log(nacimientofecha);
 
-        let partido = JSON.stringify(this.state.detalle.content.party);
+        let partido = JSON.stringify(this.state.detalle.content, undefined, 2);
         
         let datospartido = String(partido).split('","');
         let partidonombre = String(datospartido[0]);
@@ -149,11 +156,6 @@ class CrearAnotacion extends React.Component {
                                 En esta sección puedes agregar una anotación a un integrante 
                                 ya existente. Los datos que puedes indicar están dentro de un 
                                 universo establecido.
-                            </p>
-                            <p>
-                                <Link to={'/agregar'} className="btn btn-success my-2">Agregar integrante</Link>
-                                &nbsp;
-                                <Link to={'/comentarios'} className="btn btn-primary my-2">Envíanos tus comentarios</Link>
                             </p>
                         </div>
                     </div>
@@ -250,7 +252,7 @@ class CrearAnotacion extends React.Component {
                                         className="form-control" 
                                         id="birthplace" 
                                         name="birthplace" 
-                                        defaultValue={nacimientolugar}
+                                        defaultValue={this.state.detalle.content.birth.place}
                                         onChange={actualizarLugarNacimiento}
                                     />
                                 </div>
@@ -261,7 +263,7 @@ class CrearAnotacion extends React.Component {
                                         className="form-control" 
                                         id="birthdate" 
                                         name="birthdate" 
-                                        defaultValue={nacimientofecha}
+                                        defaultValue={this.state.detalle.content.birth.date}
                                         onChange={actualizarFechaNacimiento}
                                     />
                                 </div>
@@ -272,7 +274,7 @@ class CrearAnotacion extends React.Component {
                                         className="form-control" 
                                         id="partyname" 
                                         name="partyname" 
-                                        defaultValue={partidonombre} 
+                                        defaultValue={this.state.detalle.content.party.name} 
                                         onChange={actualizarNombrePartido}
                                     />
                                 </div>
@@ -283,7 +285,7 @@ class CrearAnotacion extends React.Component {
                                         className="form-control" 
                                         id="partylogo" 
                                         name="partylogo" 
-                                        defaultValue={partidologo} 
+                                        defaultValue={this.state.detalle.content.party.logo} 
                                         onChange={actualizarLogoPartido}
                                     />
                                 </div>
