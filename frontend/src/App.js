@@ -60,17 +60,9 @@ function App() {
         <Route
           exact 
           path="/crear/:id"
-          //component={CrearAnotacion}
           render={(props) => {
-            //console.log(props.match.params.id);
-            //const integrante = listaIntegrantes.filter(integrante => integrante._id === props.match.params.id)
-
-            console.log(listaIntegrantes);
-            //console.log(integrante);
-
             return (
-              <CrearAnotacion listaintegrantes={listaIntegrantes} 
-                integranteid={props.match.params.id} />
+              <CrearAnotacion integranteid={props.match.params.id} />
             )
           }}
 
@@ -80,14 +72,8 @@ function App() {
           exact 
           path="/integrante/:id"
           render={(props) => {
-            //console.log(props.match.params.id);
-            //const integrante = listaIntegrantes.filter(integrante => integrante._id === props.match.params.id)
-
-            //console.log(integrante);
-
             return (
-              <IntegranteDetalle integrante={listaIntegrantes} 
-                integranteid={props.match.params.id} />
+              <IntegranteDetalle integranteid={props.match.params.id} />
             )
           }}
         />
