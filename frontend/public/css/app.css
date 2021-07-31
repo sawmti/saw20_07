@@ -1,0 +1,45 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  h1 {
+    color:slategrey; 
+  }
+  
+  header{
+    text-align: center;
+  }
+  
+  .iconoportal{
+    width: 2em;
+    height: 2em;
+    margin: 10px;
+  }
+
+  .img-integrante{
+    width:auto;
+    height:250px;
+  }
+
+  .estilologo{
+    max-width: 150px;
+  }
+
+  /*footer{
+    background-color: darkblue;
+    color: aliceblue;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }*/

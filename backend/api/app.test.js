@@ -1,6 +1,8 @@
 import supertest from 'supertest';
 import app from './app';
 
+jest.useFakeTimers();
+
 let server;
 
 describe('/', () => {
@@ -20,3 +22,7 @@ describe('/', () => {
     await server.close();
   });
 });
+
+/*afterAll(() => { 
+  mongoose.connection.close()
+});*/
