@@ -2,43 +2,36 @@
 
 # Descripción del proyecto - group 20_07
 
-This repository contains a simple skeleton of a web page which contains a REST service implemented in Node and a simple Web client that invokes the service. 
+Este proyecto consiste en dar a conocer a la comunidad el trabajo realizado por los integrantes de la convención constitucional. Este portal obtiene información en línea desde WikiData, y permite registrar nuevos datos. Por el momento solo es una versión beta.
 
-- [client](https://github.com/sawmti/saw20_07/tree/main/client) contains the source code of the web client (html/css/javascript files)
-- [api](https://github.com/sawmti/saw20_07/tree/main/api) contains the source code of the REST API
-## Running locally
+- [Backend](https://github.com/sawmti/saw20_07/tree/main/backend) contiene el código fuente de los servicios Rest
+- [Frontend](https://github.com/sawmti/saw20_07/tree/main/frontend) plataforma cliente que consume los datos 
+## Ejecución local
 
-If you want to execute the project you will need 
-[Node.js and npm](https://www.npmjs.com/get-npm). 
+Si deseas ejecutar el proyecto localmente, debes instalar NodeJS [Node.js and npm](https://www.npmjs.com/get-npm). 
 
-Compile and run the web app:
+Compilar y ejecutar la aplicación backend:
 
 ```
+cd backend/
 npm install
 npm start
 ```
 
-You should be able to access the application in [http://localhost:3000](http://localhost:3000).
-
-## Running from Docker
-
-It is possible to run the application from docker with
-
+Compilar y ejecutar la aplicación frontend:
 ```
-docker build -t "saw2007" .
-docker run saw2007
+cd frontend/
+npm install
+npm start
 ```
 
-or 
+Para acceder a la aplicación de manera local, lo puedes hacer a través de la dirección [http://localhost:3000](http://localhost:3000).
 
-```
-docker-compose up
-```
 
-## Contributors
+## Docente guía
 
 - [Jose Emilio Labra Gayo](http://labra.weso.es)
 
-## Credits
+## Créditos
 
-This skeleton is based on a [similar skeleton](https://github.com/Arquisoft/radarin_0) created by [Pablo González](https://github.com/pglez82) which is a bit more complex because the web client is implemented as a [React application](https://reactjs.org/) and the server contains monitoring and load testing.
+Este proyecto es parte de la asignatura Sistemas y Aplicaciones Web, realizado por el [Magíster en Tecnologías de la Información](https://www.mti.cl) de la [Universidad Técnica Federico Santa María](https://www.usm.cl). Equipo compuesto por Wilfredo Guerrero, Jacob Vega y Jorge Vega.
